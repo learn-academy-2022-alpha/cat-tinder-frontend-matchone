@@ -9,6 +9,11 @@ import Home from './pages/Home.js'
 import NotFound from './pages/NotFound.js'
 import mockCats from './mockCats.js'
 import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+  }
+  from 'react-router-dom'
 class App extends Component {
 
   constructor(props) {
@@ -18,12 +23,6 @@ class App extends Component {
     }
   }
 
-  BrowserRouter as Router,
-  Route,
-  Switch
-  }
-  from 'react-router-dom'
-  
 render() {
 return (
   <>
