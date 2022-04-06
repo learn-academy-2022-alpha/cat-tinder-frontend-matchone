@@ -19,12 +19,17 @@ footer {
 
 
 .img1 {
-  float: left;
+  float: right;
 }
 
 .img2 {
   padding: 30px;
   text-align: center;
+}
+.img3 {
+  padding: 30px;
+  text-align: center;
+
 }
 
 .nav-link {
@@ -39,4 +44,3 @@ footer {
   clear: both;
   display: table;
 }
-
