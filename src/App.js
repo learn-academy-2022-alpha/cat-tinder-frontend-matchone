@@ -8,25 +8,26 @@ import CatShow from './pages/CatShow.js'
 import Home from './pages/Home.js'
 import NotFound from './pages/NotFound.js'
 import mockCats from './mockCats.js'
-import {
-class App extends Component {
-
-  constructor(props) {
-    super(props)
-    this.state= {
-        cats: mockCats
-    }
-  }
-
+import {  
   BrowserRouter as Router,
   Route,
   Switch
   }
   from 'react-router-dom'
+  class App extends Component {
+    constructor(props){
+      super(props)
+        this.state = {
+        cats: mockCats
+        }
+      }
+
+
   
 render() {
 return (
   <>
+  <Header />
   <Router>
 <Switch>
   <Route exact path="/" component={Home} />
@@ -37,6 +38,7 @@ return (
   <Route component={NotFound}/>
 </Switch>
 </Router>
+<Footer />
 </>
 )
 }
