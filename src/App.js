@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './App.css'
 import Footer from './components/Footer.js'
 import Header from './components/Header.js'
 import CatEdit from './pages/CatEdit.js'
@@ -14,31 +15,31 @@ import {
   Switch
   }
   from 'react-router-dom'
-class App extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state= {
-        cats: mockCats
+class App extends Component {
+constructor(props){
+  super(props)
+    this.state = {
+    cats: mockCats
     }
   }
 
 render() {
-return (
-  <>
-  <Router>
-<Switch>
-  <Route exact path="/" component={Home} />
-  <Route path="/catindex" component={CatIndex} />
-  <Route path="/catshow" component={CatShow} />
-  <Route path="/catnew" component={CatNew} />
-  <Route path="/catedit" component={CatEdit} />
-  <Route component={NotFound}/>
-</Switch>
-</Router>
-</>
-)
-}
+  return (
+    <Router>
+      <Header />    
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/catindex" component={CatIndex} />
+        <Route path="/catshow" component={CatShow} />
+        <Route path="/catnew" component={CatNew} />
+        <Route path="/catedit" component={CatEdit} />
+        <Route component={NotFound}/>
+      </Switch>
+      <Footer />
+    </Router>
+    )
+  }
 }
 
 export default App;
