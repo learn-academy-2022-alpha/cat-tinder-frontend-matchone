@@ -15,9 +15,9 @@ Enzyme.configure({adapter: new Adapter()})
 
 
 describe("When Home renders", () => {
-  it("displays a heading", () => {
-    const home = shallow(<Home />)
-    const homeHeading = home.find("h3").text()
-    expect(homeHeading).toEqual("Welcome to Cat Tinder!")
-  })
+ it("displays a heading", () => {
+   const home = shallow(<Home />)
+   const homeHeading = home.find("h3").text()
+   expect(homeHeading).toEqual("Welcome to Cat Tinder!")
+ })
 })

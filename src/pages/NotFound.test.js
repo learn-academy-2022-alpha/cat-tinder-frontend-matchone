@@ -8,16 +8,16 @@ import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
 // Imports in the component we are going to be testing.
-import Home from './Home'
+import NotFound from './NotFound'
 
 //Allows us to utilize the adapter we import in earlier, allowing us to call and render a component.
 Enzyme.configure({adapter: new Adapter()})
 
 
-describe("When Home renders", () => {
- it("displays a heading", () => {
-   const home = shallow(<Home />)
-   const homeHeading = home.find("h3").text()
-   expect(homeHeading).toEqual("Welcome to Cat Tinder!")
- })
+describe("When NotFound renders", () => {
+  it("displays a heading", () => {
+    const notFound = shallow(<NotFound />)
+    const notFoundHeading = notFound.find("h2").text()
+    expect(notFoundHeading).toEqual("Seeds and steams.")
+  })
 })
