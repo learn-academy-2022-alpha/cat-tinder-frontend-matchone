@@ -7,14 +7,16 @@ import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
 // Imports in the component we are going to be testing.
-import App from './App'
+import CatIndex from './CatIndex'
 
 //Allows us to utilize the adapter we import in earlier, allowing us to call and render a component.
 Enzyme.configure({adapter: new Adapter()})
-describe("When Footer renders", () => {
+
+
+describe("When CatIndex renders", () => {
   it("displays a heading", () => {
-    const app = shallow(<App />)
-    const appHeading = app.find("h1")
-    expect(appHeading.text()).toEqual("Welcome to Our App!")
+    const catindex = shallow(<CatIndex />)
+    const catIndexHeading = catindex.find("h3").text()
+    expect(catIndexHeading).toEqual("Meet the Cats!")
   })
 })
