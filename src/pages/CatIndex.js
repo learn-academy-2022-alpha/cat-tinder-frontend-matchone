@@ -1,10 +1,40 @@
 import React, { Component } from 'react'
+import { Card, CardTitle, Col } from 'reactstrap'
+import { NavLink } from 'react-router-dom'
 
 class CatIndex extends Component {
-  render () {
-    return (
-      <div>Footer</div>
+  constructor(props){
+    super(props)
+    }
+      render () {
+        let {cat}= this.props
+          return (
+      <>
+        <h3>Meet the Cats!</h3>
+        <br />
+        <Col sm="6">
+          {cat && cat.map(cat => {
+            return (
+              <Card body key={cat.id}>
+                <CardTitle>
+                  <h4>{cat.name}</h4>
+                    <NavLink to={`/catshow/${cat.id}`} key={cat.id}>
+                    {cat.name}
+                    </NavLink>
+                </CardTitle>
+              </Card>
+            )
+          })
+        }
+       </Col>
+
+
+      </>
     )
   }
 }
+
+
+
+
 export default CatIndex
