@@ -14,14 +14,44 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
   class App extends Component {
       constructor(props){
         super(props)
-          this.state = {
-            cats: mockCats
-    }
-  }
-  createCat = (cat) => {
-    console.log(cat)
-  }
+        this.state = {
+          cats: []
+        }
+      }
+
+      componentDidMount(){
+        this.readCat()
+            }
+
+            createCat = (newCat) => {
+              fetch("http://localhost:3000/cats", {
+                body: JSON.stringify(newCat),
+                headers: {
+                "Content-Type": "application/json"
+                },
+                method: "POST"
+                })
+                  .then(response => response.json())
+                  .then(payload => this.readCat())
+                  .catch(errors => console.log("Cat create errors:", errors))
+                }
+            readCat = () => {
+              fetch("http://localhost:3000/cats")
+                .then(response => response.json())
+                .then(payload => this.setState({cats: payload}))
+                .catch(errors => console.log("Cat read errors", errors))
+              }
+            updatedCat = (updatedCat, id) => {
+              console.log("Cat was updated", updatedCat)
+              console.log("Cat id is", id )
+            }
+
+            deletedCat = (id) => {
+              console.log(`Cat at ${id} was deleted`, id)
+            }
+
               render() {
+                console.log(this.state)
                 return (
                   <>
                   <h1>Welcome to Our App!</h1>
