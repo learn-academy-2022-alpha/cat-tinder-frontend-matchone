@@ -31,16 +31,18 @@ footer {
   text-align: center;
 
 }
-
-.nav-link {
-  display: flex;
+.nav {
+  display:inline
+}
+/* .nav-link {
+  display: inline;
   flex-direction: row;
   align-items: flex-end;
   padding-right: 50 px;
-}
+} */
 
-.clearfix::after {
+/* .clearfix::after {
   content: "";
   clear: both;
   display: table;
-}
+} */
